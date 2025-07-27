@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sistema de Gestión de Eventos</title>
+  <link rel="stylesheet" href="styless.css" />
+</head>
+<body>
+
+  <div id="google_translate_element"></div>
+
+  <header>
+    <h1>Sistema de Gestión de Eventos</h1>
+    <div id="botones-superiores">
+      <!-- Botones originales en orden original -->
+      <button onclick="entrarComo('organizador')">Organizador</button>
+      <button onclick="entrarComo('usuario')">Participante</button>
+      <button onclick="mostrarConsultaDesdeInicio()">Consultar Eventos</button>
+      <button onclick="mostrarManualDesdeInicio()">Manual de Usuario</button>
+    </div>
+  </header>
+
+  <main id="contenido" class="oculto">
+    <nav id="menu-organizador" class="oculto">
+      <button onclick="mostrarFormulario('evento')">Registrar Evento</button>
+      <button onclick="mostrarFormulario('ubicacion')">Registrar Ubicación</button>
+      <button onclick="mostrarFormulario('contacto')">Registrar Contacto</button>
+    </nav>
+
+    <!-- Formulario Evento -->
+    <section id="formulario-evento" class="formulario oculto">
+      <h2>Registrar Evento</h2>
+      <form onsubmit="registrarEvento(event)">
+        <input type="text" placeholder="Título del evento" id="tituloEvento" required />
+        <input type="text" placeholder="Invitados" id="invitados" required />
+        <input type="datetime-local" id="fechaHora" required />
+        <input type="text" placeholder="Zona horaria" id="zonaHoraria" required />
+        <textarea placeholder="Descripción" id="descripcion" required></textarea>
+        <select id="repeticion">
+          <option value="Ninguna">Ninguna</option>
+          <option value="Diaria">Diaria</option>
+          <option value="Semanal">Semanal</option>
+        </select>
+        <input type="text" placeholder="Recordatorio" id="recordatorio" />
+        <input type="text" placeholder="Clasificación" id="clasificacion" />
+        <input type="text" placeholder="Lugar" id="lugar" />
+        <button type="submit">Guardar Evento</button>
+      </form>
+    </section>
+
+    <!-- Ubicación -->
+    <section id="formulario-ubicacion" class="formulario oculto">
+      <h2>Registrar Ubicación</h2>
+      <form onsubmit="registrarUbicacion(event)">
+        <input type="text" placeholder="Título" id="tituloUbicacion" required />
+        <input type="text" placeholder="Dirección" id="direccion" required />
+        <input type="text" placeholder="Coordenadas" id="coordenadas" required />
+        <button type="submit">Guardar Ubicación</button>
+      </form>
+    </section>
+
+    <!-- Contacto -->
+    <section id="formulario-contacto" class="formulario oculto">
+      <h2>Registrar Contacto</h2>
+      <form onsubmit="registrarContacto(event)">
+        <input type="text" placeholder="Saludo" id="saludo" required />
+        <input type="text" placeholder="Nombre completo" id="nombreCompleto" required />
+        <input type="text" placeholder="Identificación" id="identificacion" required />
+        <input type="email" placeholder="Correo" id="correo" required />
+        <input type="tel" placeholder="Teléfono" id="telefono" required />
+        <input type="file" id="foto" />
+        <button type="submit">Guardar Contacto</button>
+      </form>
+    </section>
+
+    <!-- Participante -->
+    <section id="registro-evento" class="formulario oculto">
+      <h2>Registro a Evento</h2>
+      <form onsubmit="registrarseEvento(event)">
+        <input type="text" placeholder="Nombre completo" required />
+        <input type="email" placeholder="Correo electrónico" required />
+        <select required>
+          <option value="">Selecciona un evento</option>
+          <option value="Taller de Programación">Taller de Programación</option>
+          <option value="Seminario de Ciencias">Seminario de Ciencias</option>
+          <option value="Conferencia de Robótica">Conferencia de Robótica</option>
+        </select>
+        <button type="submit">Registrarse</button>
+      </form>
+    </section>
+
+    <!-- Consulta -->
+    <section id="consulta-eventos" class="formulario oculto">
+      <h2>Eventos Registrados</h2>
+      <table id="tabla-eventos">
+        <thead>
+          <tr>
+            <th>Título</th>
+            <th>Invitados</th>
+            <th>Fecha y Hora</th>
+            <th>Zona Horaria</th>
+            <th>Lugar</th>
+            <th>Clasificación</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <button onclick="eliminarTodosLosEventos()">🗑️ Eliminar todos los eventos</button>
+    </section>
+
+    <!-- Manual -->
+    <section id="manual-usuario" class="formulario oculto">
+      <h2>📘 Manual de Usuario</h2>
+      <p>Este manual te guiará en el uso del sistema.</p>
+      <ul>
+        <li><strong>Organizador:</strong> registra eventos, ubicaciones y contactos.</li>
+        <li><strong>Participante:</strong> inscríbete en eventos.</li>
+        <li><strong>Consulta:</strong> visualiza eventos registrados en cualquier momento.</li>
+      </ul>
+      <video width="600" controls>
+        <source src="C:\Users\hp\Desktop\Presentación1.mp4" type="video/mp4">
+        Tu navegador no soporta el video.
+      </video>
+      <button onclick="cerrarManual()">Cerrar Manual</button>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>

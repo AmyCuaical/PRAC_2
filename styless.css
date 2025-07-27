@@ -1,0 +1,215 @@
+/* Reset básico y estilos generales */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1400&q=80') no-repeat center center fixed;
+  background-size: cover;
+  color: #f5f0f0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Traductor fijo arriba derecha */
+#google_translate_element {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+}
+
+header {
+  text-align: center;
+  padding: 30px 15px 15px;
+  background: rgba(0,0,0,0.6);
+  user-select: none;
+}
+
+header h1 {
+  margin-bottom: 15px;
+  font-size: 2.8rem;
+  font-weight: 700;
+}
+
+/* Botones superiores - igual que original pero en línea y centrados */
+#botones-superiores {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+#botones-superiores button {
+  background-color: lab(24.36% -9.72 -14.29);
+  color: white;
+  border: none;
+  padding: 13px 28px;
+  border-radius: 14px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(214, 51, 108, 0.3);
+  transition: background-color 0.25s ease;
+  min-width: 150px;
+}
+
+#botones-superiores button:hover {
+  background-color: #6f42c1;
+  box-shadow: 0 6px 14px rgba(111, 66, 193, 0.5);
+}
+
+main {
+  flex-grow: 1;
+  width: 100%;
+  max-width: 700px;
+  margin: 30px auto 50px auto;
+  background-color: rgba(255,255,255,0.95);
+  color: #5a2d82;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(123, 63, 160, 0.15);
+  padding: 25px 30px;
+}
+
+/* Formularios, tablas y secciones */
+.formulario h2 {
+  color: #5a2d82;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 1.9rem;
+  letter-spacing: 1px;
+}
+
+.formulario input,
+.formulario textarea,
+.formulario select {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 18px;
+  border: 2px solid #eec9f0;
+  border-radius: 12px;
+  font-size: 1rem;
+  background-color: #fff;
+  transition: border-color 0.3s ease-in-out;
+  font-family: inherit;
+}
+
+.formulario input:focus,
+.formulario textarea:focus,
+.formulario select:focus {
+  border-color: #d6336c;
+  outline: none;
+  background-color: #fff;
+}
+
+.formulario button {
+  background-color: #d6336c;
+  color: #fff;
+  padding: 13px 28px;
+  border: none;
+  border-radius: 14px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin: 8px 7px;
+  transition: background-color 0.25s ease;
+  font-family: inherit;
+  min-width: 150px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(214, 51, 108, 0.3);
+}
+
+.formulario button:hover {
+  background-color: #6f42c1;
+  box-shadow: 0 6px 14px rgba(111, 66, 193, 0.5);
+}
+
+.oculto {
+  display: none !important;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 3px 18px rgba(123, 63, 160, 0.2);
+  margin-top: 22px;
+}
+
+th, td {
+  padding: 15px 20px;
+  text-align: left;
+  border-bottom: 1.5px solid #f0d9f6;
+  font-size: 1rem;
+  color: #5a2d82;
+}
+
+th {
+  background-color: #7b3fa0;
+  color: #f8e7f9;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+tr:nth-child(even) {
+  background-color: #f8e7f9;
+}
+
+#consulta-eventos button {
+  background-color: #b3305a;
+  margin-top: 24px;
+  min-width: auto;
+  padding: 12px 22px;
+  box-shadow: 0 3px 8px rgba(179, 48, 90, 0.4);
+}
+
+#consulta-eventos button:hover {
+  background-color: #7a1e3d;
+  box-shadow: 0 4px 12px rgba(122, 30, 61, 0.6);
+}
+
+video {
+  display: block;
+  margin: 20px auto 10px;
+  max-width: 100%;
+  border-radius: 12px;
+}
+
+
+#menu-organizador {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+#menu-organizador button {
+  min-width: 180px;
+  padding: 15px 30px;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 8px 15px rgba(38, 97, 255, 0.3);
+  transition: all 0.3s ease;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#menu-organizador button:hover {
+  background: linear-gradient(135deg, #2575fc, #6a11cb);
+  box-shadow: 0 12px 20px rgba(38, 97, 255, 0.6);
+  transform: translateY(-4px) scale(1.05);
+}
